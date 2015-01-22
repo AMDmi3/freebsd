@@ -948,13 +948,11 @@ OLD_DIRS+=usr/lib/clang/3.6.0/lib
 OLD_DIRS+=usr/lib/clang/3.6.0
 OLD_DIRS+=usr/lib/clang
 OLD_FILES+=usr/share/doc/llvm/clang/LICENSE.TXT
-OLD_DIRS+=usr/share/doc/llvm/clang
 OLD_FILES+=usr/share/doc/llvm/COPYRIGHT.regex
 OLD_FILES+=usr/share/doc/llvm/LICENSE.TXT
-OLD_DIRS+=usr/share/doc/llvm
-OLD_FILES+=usr/share/man/man1/clang.1.gz
 OLD_FILES+=usr/share/man/man1/clang++.1.gz
 OLD_FILES+=usr/share/man/man1/clang-cpp.1.gz
+OLD_FILES+=usr/share/man/man1/clang.1.gz
 OLD_FILES+=usr/share/man/man1/tblgen.1.gz
 .endif
 
