@@ -570,10 +570,6 @@ OLD_FILES+=usr/share/snmp/mibs/BRIDGE-MIB.txt
 OLD_FILES+=usr/share/snmp/mibs/FOKUS-MIB.txt
 OLD_FILES+=usr/share/snmp/mibs/FREEBSD-MIB.txt
 OLD_FILES+=usr/share/snmp/mibs/RSTP-MIB.txt
-OLD_DIRS+=usr/include/bsnmp
-OLD_DIRS+=usr/share/snmp
-OLD_DIRS+=usr/share/snmp/defs
-OLD_DIRS+=usr/share/snmp/mibs
 .endif
 
 .if ${MK_CALENDAR} == no
