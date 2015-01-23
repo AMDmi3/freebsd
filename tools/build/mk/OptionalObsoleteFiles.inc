@@ -996,12 +996,15 @@ OLD_FILES+=usr/share/man/man5/ctm.5.gz
 .endif
 
 .if ${MK_CUSE} == no
-OLD_FILES+=usr/include/fs/cuse/cuse_defs.h
-OLD_FILES+=usr/include/fs/cuse/cuse_ioctl.h
 OLD_FILES+=usr/include/cuse.h
 OLD_FILES+=usr/lib/libcuse.a
+OLD_FILES+=usr/lib/libcuse.so
 OLD_LIBS+=usr/lib/libcuse.so.1
 OLD_FILES+=usr/lib/libcuse_p.a
+OLD_FILES+=usr/lib32/libcuse.a
+OLD_FILES+=usr/lib32/libcuse.so
+OLD_LIBS+=usr/lib32/libcuse.so.1
+OLD_FILES+=usr/lib32/libcuse_p.a
 OLD_FILES+=usr/share/man/man3/cuse.3.gz
 OLD_FILES+=usr/share/man/man3/cuse_alloc_unit_number.3.gz
 OLD_FILES+=usr/share/man/man3/cuse_alloc_unit_number_by_id.3.gz
@@ -1029,7 +1032,6 @@ OLD_FILES+=usr/share/man/man3/cuse_vmalloc.3.gz
 OLD_FILES+=usr/share/man/man3/cuse_vmfree.3.gz
 OLD_FILES+=usr/share/man/man3/cuse_vmoffset.3.gz
 OLD_FILES+=usr/share/man/man3/cuse_wait_and_process.3.gz
-OLD_DIRS+=usr/include/fs/cuse
 .endif
 
 # devd(8) not listed here on purpose
