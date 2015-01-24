@@ -7771,6 +7771,15 @@ OLD_FILES+=usr/share/man/man8/lpd.8.gz
 OLD_FILES+=usr/share/man/man8/pac.8.gz
 .endif
 
+.if ${MK_LZMA_SUPPORT} == no
+OLD_FILES+=usr/bin/lzegrep
+OLD_FILES+=usr/bin/lzfgrep
+OLD_FILES+=usr/bin/lzgrep
+OLD_FILES+=usr/bin/xzegrep
+OLD_FILES+=usr/bin/xzfgrep
+OLD_FILES+=usr/bin/xzgrep
+.endif
+
 .if ${MK_MAIL} == no
 OLD_FILES+=etc/periodic/daily/130.clean-msgs
 OLD_FILES+=usr/bin/Mail
