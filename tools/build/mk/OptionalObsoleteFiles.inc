@@ -7733,6 +7733,7 @@ OLD_FILES+=usr/libexec/locate.code
 OLD_FILES+=usr/libexec/locate.concatdb
 OLD_FILES+=usr/libexec/locate.mklocatedb
 OLD_FILES+=usr/libexec/locate.updatedb
+OLD_FILES+=usr/share/examples/etc/locate.rc
 OLD_FILES+=usr/share/man/man1/locate.1.gz
 OLD_FILES+=usr/share/man/man8/locate.updatedb.8.gz
 OLD_FILES+=usr/share/man/man8/updatedb.8.gz
