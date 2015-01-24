@@ -7260,6 +7260,7 @@ OLD_FILES+=etc/devd/usb.conf
 
 .if ${MK_UTMPX} == no
 OLD_FILES+=etc/periodic/monthly/200.accounting
+OLD_FILES+=etc/rc.d/utx
 OLD_FILES+=usr/bin/last
 OLD_FILES+=usr/bin/users
 OLD_FILES+=usr/bin/who
