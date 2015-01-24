@@ -9693,7 +9693,6 @@ OLD_FILES+=usr/share/examples/etc/csh.login
 OLD_FILES+=usr/share/examples/etc/csh.logout
 OLD_FILES+=usr/share/examples/tcsh/complete.tcsh
 OLD_FILES+=usr/share/examples/tcsh/csh-mode.el
-OLD_DIRS+=usr/share/examples/tcsh
 OLD_FILES+=usr/share/man/man1/csh.1.gz
 OLD_FILES+=usr/share/man/man1/tcsh.1.gz
 OLD_FILES+=usr/share/nls/de_AT.ISO8859-1/tcsh.cat
