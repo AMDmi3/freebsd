@@ -2472,6 +2472,19 @@ OLD_FILES+=usr/share/man/man1/gperf.1.gz
 .endif
 .endif
 
+.if ${MK_FORTH} == no
+OLD_FILES+=usr/share/man/man5/loader.conf.5.gz
+OLD_FILES+=usr/share/man/man8/beastie.4th.8.gz
+OLD_FILES+=usr/share/man/man8/brand.4th.8.gz
+OLD_FILES+=usr/share/man/man8/check-password.4th.8.gz
+OLD_FILES+=usr/share/man/man8/color.4th.8.gz
+OLD_FILES+=usr/share/man/man8/delay.4th.8.gz
+OLD_FILES+=usr/share/man/man8/loader.4th.8.gz
+OLD_FILES+=usr/share/man/man8/menu.4th.8.gz
+OLD_FILES+=usr/share/man/man8/menusets.4th.8.gz
+OLD_FILES+=usr/share/man/man8/version.4th.8.gz
+.endif
+
 .if ${MK_FMTREE} == no
 OLD_FILES+=usr/sbin/fmtree
 OLD_FILES+=usr/share/man/man8/fmtree.8.gz
