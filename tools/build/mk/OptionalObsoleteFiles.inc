@@ -8715,14 +8715,6 @@ OLD_FILES+=usr/share/examples/pc-sysinstall/pcinstall.cfg.zfs
 # pc-sysinstall
 OLD_FILES+=usr/sbin/pc-sysinstall
 OLD_FILES+=usr/share/man/man8/pc-sysinstall.8.gz
-OLD_DIRS+=usr/share/pc-sysinstall/backend
-OLD_DIRS+=usr/share/pc-sysinstall/backend-partmanager
-OLD_DIRS+=usr/share/pc-sysinstall/backend-query
-OLD_DIRS+=usr/share/pc-sysinstall/conf/license
-OLD_DIRS+=usr/share/pc-sysinstall/conf
-OLD_DIRS+=usr/share/pc-sysinstall/doc
-OLD_DIRS+=usr/share/pc-sysinstall
-OLD_DIRS+=usr/share/examples/pc-sysinstall
 .endif
 
 .if ${MK_PF} == no
