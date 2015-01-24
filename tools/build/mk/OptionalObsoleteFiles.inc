@@ -3477,6 +3477,7 @@ OLD_FILES+=usr/share/man/man6/random.6.gz
 OLD_FILES+=usr/share/man/man6/rot13.6.gz
 OLD_FILES+=usr/share/man/man8/strfile.8.gz
 OLD_FILES+=usr/share/man/man8/unstr.8.gz
+OLD_FILES+=usr/tests/games/Kyuafile
 .endif
 
 .if ${MK_GCC} == no
