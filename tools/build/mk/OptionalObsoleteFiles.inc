@@ -3078,6 +3078,10 @@ OLD_FILES+=usr/share/dict/words
 
 .if ${MK_DMAGENT} == no
 OLD_FILES+=etc/dma/dma.conf
+OLD_FILES+=usr/libexec/dma
+OLD_FILES+=usr/libexec/dma-mbox-create
+OLD_FILES+=usr/share/examples/dma/mailer.conf
+OLD_FILES+=usr/share/man/man8/dma.8.gz
 .endif
 
 .if ${MK_EE} == no
@@ -3983,6 +3987,15 @@ OLD_FILES+=usr/share/doc/ntp/rdebug.html
 OLD_FILES+=usr/share/doc/ntp/refclock.html
 OLD_FILES+=usr/share/doc/ntp/release.html
 OLD_FILES+=usr/share/doc/ntp/tickadj.html
+.endif
+
+.if ${MK_HYPERV} == no
+OLD_FILES+=etc/devd/hyperv.conf
+OLD_FILES+=usr/libexec/hyperv/hv_set_ifconfig
+OLD_FILES+=usr/libexec/hyperv/hv_get_dns_info
+OLD_FILES+=usr/libexec/hyperv/hv_get_dhcp_info
+OLD_FILES+=usr/sbin/hv_kvp_daemon
+OLD_FILES+=usr/share/man/man8/hv_kvp_daemon.8.gz
 .endif
 
 .if ${MK_ICONV} == no
@@ -6480,6 +6493,31 @@ OLD_FILES+=usr/tests/lib/libc/ssp/h_vsprintf
 OLD_FILES+=usr/tests/lib/libc/ssp/ssp_test
 .endif
 
+.if ${MK_SVNLITE} == no || ${MK_SVN} == yes
+OLD_FILES+=usr/bin/svnlite
+OLD_FILES+=usr/bin/svnliteadmin
+OLD_FILES+=usr/bin/svnlitedumpfilter
+OLD_FILES+=usr/bin/svnlitelook
+OLD_FILES+=usr/bin/svnlitemucc
+OLD_FILES+=usr/bin/svnliterdump
+OLD_FILES+=usr/bin/svnliteserve
+OLD_FILES+=usr/bin/svnlitesync
+OLD_FILES+=usr/bin/svnliteversion
+OLD_FILES+=usr/share/man/man1/svnlite.1.gz
+.endif
+
+.if ${MK_SVN} == no
+OLD_FILES+=usr/bin/svn
+OLD_FILES+=usr/bin/svnadmin
+OLD_FILES+=usr/bin/svndumpfilter
+OLD_FILES+=usr/bin/svnlook
+OLD_FILES+=usr/bin/svnmucc
+OLD_FILES+=usr/bin/svnrdump
+OLD_FILES+=usr/bin/svnserve
+OLD_FILES+=usr/bin/svnsync
+OLD_FILES+=usr/bin/svnversion
+.endif
+
 .if ${MK_SYSCONS} == no
 OLD_FILES+=usr/share/syscons/fonts/INDEX.fonts
 OLD_FILES+=usr/share/syscons/fonts/armscii8-8x14.fnt
@@ -7343,47 +7381,6 @@ OLD_FILES+=usr/share/man/man8/wlandebug.8.gz
 OLD_FILES+=usr/share/man/man8/wpa_cli.8.gz
 OLD_FILES+=usr/share/man/man8/wpa_passphrase.8.gz
 OLD_FILES+=usr/share/man/man8/wpa_supplicant.8.gz
-.endif
-
-.if ${MK_SVNLITE} == no || ${MK_SVN} == yes
-OLD_FILES+=usr/bin/svnlite
-OLD_FILES+=usr/bin/svnliteadmin
-OLD_FILES+=usr/bin/svnlitedumpfilter
-OLD_FILES+=usr/bin/svnlitelook
-OLD_FILES+=usr/bin/svnlitemucc
-OLD_FILES+=usr/bin/svnliterdump
-OLD_FILES+=usr/bin/svnliteserve
-OLD_FILES+=usr/bin/svnlitesync
-OLD_FILES+=usr/bin/svnliteversion
-OLD_FILES+=usr/share/man/man1/svnlite.1.gz
-.endif
-
-.if ${MK_SVN} == no
-OLD_FILES+=usr/bin/svn
-OLD_FILES+=usr/bin/svnadmin
-OLD_FILES+=usr/bin/svndumpfilter
-OLD_FILES+=usr/bin/svnlook
-OLD_FILES+=usr/bin/svnmucc
-OLD_FILES+=usr/bin/svnrdump
-OLD_FILES+=usr/bin/svnserve
-OLD_FILES+=usr/bin/svnsync
-OLD_FILES+=usr/bin/svnversion
-.endif
-
-.if ${MK_DMAGENT} == no
-OLD_FILES+=usr/libexec/dma
-OLD_FILES+=usr/libexec/dma-mbox-create
-OLD_FILES+=usr/share/man/man8/dma.8.gz
-OLD_FILES+=usr/share/examples/dma/mailer.conf
-.endif
-
-.if ${MK_HYPERV} == no
-OLD_FILES+=etc/devd/hyperv.conf
-OLD_FILES+=usr/libexec/hyperv/hv_set_ifconfig
-OLD_FILES+=usr/libexec/hyperv/hv_get_dns_info
-OLD_FILES+=usr/libexec/hyperv/hv_get_dhcp_info
-OLD_FILES+=usr/sbin/hv_kvp_daemon
-OLD_FILES+=usr/share/man/man8/hv_kvp_daemon.8.gz
 .endif
 
 .if ${MK_ZONEINFO} == no
