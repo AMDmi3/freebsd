@@ -8932,13 +8932,21 @@ OLD_FILES+=usr/share/man/man8/talkd.8.gz
 .endif
 
 .if ${MK_TCSH} == no
+OLD_FILES+=.cshrc
+OLD_FILES+=etc/csh.cshrc
+OLD_FILES+=etc/csh.login
+OLD_FILES+=etc/csh.logout
 OLD_FILES+=bin/csh
 OLD_FILES+=bin/tcsh
 OLD_FILES+=rescue/csh
 OLD_FILES+=rescue/tcsh
+OLD_FILES+=root/.cshrc
+OLD_FILES+=root/.login
+OLD_FILES+=usr/share/examples/etc/csh.cshrc
+OLD_FILES+=usr/share/examples/etc/csh.login
+OLD_FILES+=usr/share/examples/etc/csh.logout
 OLD_FILES+=usr/share/examples/tcsh/complete.tcsh
 OLD_FILES+=usr/share/examples/tcsh/csh-mode.el
-OLD_DIRS+=usr/share/examples/tcsh
 OLD_FILES+=usr/share/man/man1/csh.1.gz
 OLD_FILES+=usr/share/man/man1/tcsh.1.gz
 OLD_FILES+=usr/share/nls/de_AT.ISO8859-1/tcsh.cat
