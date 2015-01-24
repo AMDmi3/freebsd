@@ -6748,8 +6748,14 @@ OLD_FILES+=usr/lib32/libcxxrt.so
 OLD_LIBS+=usr/lib32/libcxxrt.so.1
 OLD_FILES+=usr/lib32/libcxxrt_p.a
 OLD_DIRS+=usr/include/c++/v1/experimental
-OLD_DIRS+=usr/include/c++/v1/ext
-OLD_DIRS+=usr/include/c++/v1
+OLD_FILES+=usr/lib32/libc++.a
+OLD_FILES+=usr/lib32/libc++.so
+OLD_LIBS+=usr/lib32/libc++.so.1
+OLD_FILES+=usr/lib32/libc++_p.a
+OLD_FILES+=usr/lib32/libcxxrt.a
+OLD_FILES+=usr/lib32/libcxxrt.so
+OLD_LIBS+=usr/lib32/libcxxrt.so.1
+OLD_FILES+=usr/lib32/libcxxrt_p.a
 .endif
 
 #.if ${MK_LIBTHR} == no
