@@ -3176,6 +3176,7 @@ OLD_FILES+=usr/share/games/fortune/zippy
 OLD_FILES+=usr/share/games/fortune/zippy.dat
 OLD_DIRS+=usr/share/games/fortune
 OLD_DIRS+=usr/share/games
+OLD_FILES+=usr/share/man/man6/bcd.6.gz
 OLD_FILES+=usr/share/man/man6/caesar.6.gz
 OLD_FILES+=usr/share/man/man6/factor.6.gz
 OLD_FILES+=usr/share/man/man6/fortune.6.gz
