@@ -8910,7 +8910,6 @@ OLD_FILES+=usr/share/man/man8/portsnap.8.gz
 
 .if ${MK_PPP} == no
 OLD_FILES+=etc/ppp/ppp.conf
-OLD_DIRS+=etc/ppp
 OLD_FILES+=usr/sbin/ppp
 OLD_FILES+=usr/sbin/pppctl
 OLD_FILES+=usr/share/man/man8/ppp.8.gz
