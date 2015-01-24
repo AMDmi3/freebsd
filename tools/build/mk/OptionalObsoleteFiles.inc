@@ -9711,7 +9711,6 @@ OLD_FILES+=usr/share/examples/etc/wpa_supplicant.conf
 OLD_FILES+=usr/share/examples/hostapd/hostapd.conf
 OLD_FILES+=usr/share/examples/hostapd/hostapd.eap_user
 OLD_FILES+=usr/share/examples/hostapd/hostapd.wpa_psk
-OLD_DIRS+=usr/share/examples/hostapd
 OLD_FILES+=usr/share/man/man5/hostapd.conf.5.gz
 OLD_FILES+=usr/share/man/man5/wpa_supplicant.conf.5.gz
 OLD_FILES+=usr/share/man/man8/ancontrol.8.gz
