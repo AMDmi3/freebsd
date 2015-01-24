@@ -4355,7 +4355,7 @@ OLD_FILES+=usr/share/man/man8/traceroute6.8.gz
 OLD_FILES+=rescue/ping6
 .endif
 
-.if ${MK_INSTALLIB} == no
+.if ${MK_INSTALLLIB} == no
 OLD_FILES+=usr/lib/clang/3.5.1/lib/freebsd/libclang_rt.asan-x86_64.a
 OLD_FILES+=usr/lib/clang/3.5.1/lib/freebsd/libclang_rt.asan_cxx-x86_64.a
 OLD_FILES+=usr/lib/clang/3.5.1/lib/freebsd/libclang_rt.profile-x86_64.a
@@ -8540,7 +8540,7 @@ OLD_FILES+=usr/lib/private/libldns_p.a
 OLD_FILES+=usr/lib/private/libssh_p.a
 .endif
 
-.if ${MK_QUOTA} == no
+.if ${MK_QUOTAS} == no
 OLD_FILES+=sbin/quotacheck
 OLD_FILES+=usr/bin/quota
 OLD_FILES+=usr/sbin/edquota
