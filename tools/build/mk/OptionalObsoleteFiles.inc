@@ -6724,7 +6724,7 @@ OLD_LIBS+=usr/lib32/libcxxrt.so.1
 OLD_FILES+=usr/lib32/libcxxrt_p.a
 .endif
 
-#.if ${MK_LIBTHR} == no
+.if ${MK_LIBTHR} == no
 OLD_LIBS+=lib/libthr.so.3
 OLD_LIBS+=lib/libzpool.so.2
 OLD_FILES+=sbin/ggatec
@@ -6915,7 +6915,7 @@ OLD_FILES+=usr/tests/lib/libthr/sigmask_test
 OLD_FILES+=usr/tests/lib/libthr/sigsuspend_test
 OLD_FILES+=usr/tests/lib/libthr/sleep_test
 OLD_FILES+=usr/tests/lib/libthr/swapcontext_test
-#.endif
+.endif
 
 .if ${MK_LOCALES} == no
 OLD_FILES+=usr/share/locale/UTF-8/LC_CTYPE
