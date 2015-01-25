@@ -5860,22 +5860,6 @@ OLD_FILES+=usr/share/man/man5/keymap.5.gz
 OLD_FILES+=usr/share/man/man8/moused.8.gz
 .endif
 
-.if ${MK_KERBEROS_SUPPORT} == no
-OLD_FILES+=usr/bin/compile_et
-OLD_FILES+=usr/include/com_err.h
-OLD_FILES+=usr/include/com_right.h
-OLD_FILES+=usr/lib/libcom_err.a
-OLD_FILES+=usr/lib/libcom_err.so
-OLD_LIBS+=usr/lib/libcom_err.so.5
-OLD_FILES+=usr/lib/libcom_err_p.a
-OLD_FILES+=usr/lib32/libcom_err.a
-OLD_FILES+=usr/lib32/libcom_err.so
-OLD_LIBS+=usr/lib32/libcom_err.so.5
-OLD_FILES+=usr/lib32/libcom_err_p.a
-OLD_FILES+=usr/share/man/man1/compile_et.1.gz
-OLD_FILES+=usr/share/man/man3/com_err.3.gz
-.endif
-
 .if ${MK_LDNS_UTILS} == no
 OLD_FILES+=usr/bin/drill
 OLD_FILES+=usr/share/man/man1/drill.1.gz
