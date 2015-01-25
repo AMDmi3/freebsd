@@ -8971,7 +8971,6 @@ OLD_FILES+=usr/share/examples/pf/queue2
 OLD_FILES+=usr/share/examples/pf/queue3
 OLD_FILES+=usr/share/examples/pf/queue4
 OLD_FILES+=usr/share/examples/pf/spamd
-OLD_DIRS+=usr/share/examples/pf
 OLD_FILES+=usr/share/man/man4/pf.4.gz
 OLD_FILES+=usr/share/man/man4/pflog.4.gz
 OLD_FILES+=usr/share/man/man4/pfsync.4.gz
