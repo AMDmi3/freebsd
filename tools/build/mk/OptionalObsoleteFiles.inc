@@ -6675,7 +6675,6 @@ OLD_FILES+=usr/include/c++/v1/unwind.h
 OLD_FILES+=usr/include/c++/v1/utility
 OLD_FILES+=usr/include/c++/v1/valarray
 OLD_FILES+=usr/include/c++/v1/vector
-OLD_DIRS+=usr/include/c++/v1/experimental
 OLD_FILES+=usr/lib32/libc++.a
 OLD_FILES+=usr/lib32/libc++.so
 OLD_LIBS+=usr/lib32/libc++.so.1
