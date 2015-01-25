@@ -10450,7 +10450,7 @@ OLD_FILES+=usr/tests/lib/atf/test-programs/sh_helpers
 OLD_FILES+=usr/tests/lib/atf/test-programs/srcdir_test
 .endif
 
-.if ${MK_TEXTPROC} == yes
+.if ${MK_TEXTPROC} == no
 OLD_FILES+=usr/bin/checknr
 OLD_FILES+=usr/bin/colcrt
 OLD_FILES+=usr/bin/ul
