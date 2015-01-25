@@ -4758,7 +4758,6 @@ OLD_FILES+=usr/share/examples/ipfilter/ipf-howto.txt
 OLD_FILES+=usr/share/examples/ipfilter/examples.txt
 OLD_FILES+=usr/share/examples/ipfilter/rules.txt
 OLD_FILES+=usr/share/examples/ipfilter/mkfilters
-OLD_DIRS+=usr/share/examples/ipfilter
 OLD_FILES+=usr/share/man/man1/ipftest.1.gz
 OLD_FILES+=usr/share/man/man1/ipresend.1.gz
 OLD_FILES+=usr/share/man/man1/mkfilters.1.gz
