@@ -5800,6 +5800,21 @@ OLD_FILES+=usr/lib32/private/libldns_p.a
 .endif
 .endif
 
+.if ${MK_LEGACY_CONSOLE} == no
+OLD_FILES+=usr/sbin/kbdcontrol
+OLD_FILES+=usr/sbin/kbdmap
+OLD_FILES+=usr/sbin/moused
+OLD_FILES+=usr/sbin/vidcontrol
+OLD_FILES+=usr/sbin/vidfont
+OLD_FILES+=usr/share/man/man1/kbdcontrol.1.gz
+OLD_FILES+=usr/share/man/man1/kbdmap.1.gz
+OLD_FILES+=usr/share/man/man1/vidcontrol.1.gz
+OLD_FILES+=usr/share/man/man1/vidfont.1.gz
+OLD_FILES+=usr/share/man/man5/kbdmap.5.gz
+OLD_FILES+=usr/share/man/man5/keymap.5.gz
+OLD_FILES+=usr/share/man/man8/moused.8.gz
+.endif
+
 .if ${MK_LDNS_UTILS} == no
 OLD_FILES+=usr/bin/drill
 OLD_FILES+=usr/share/man/man1/drill.1.gz
