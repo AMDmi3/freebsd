@@ -845,11 +845,13 @@ OLD_FILES+=etc/periodic/daily/800.scrub-zfs
 OLD_LIBS+=lib/libzfs.so.2
 OLD_LIBS+=lib/libzfs_core.so.2
 OLD_LIBS+=lib/libzpool.so.2
+OLD_FILES+=rescue/zdb
 OLD_FILES+=rescue/zfs
 OLD_FILES+=rescue/zpool
 OLD_FILES+=sbin/zfs
 OLD_FILES+=sbin/zpool
 OLD_FILES+=usr/bin/zinject
+OLD_FILES+=usr/bin/zstreamdump
 OLD_FILES+=usr/bin/ztest
 OLD_FILES+=usr/lib/libzfs.a
 OLD_FILES+=usr/lib/libzfs.so
@@ -873,8 +875,14 @@ OLD_FILES+=usr/lib32/libzpool.so
 OLD_LIBS+=usr/lib32/libzpool.so.2
 .endif
 OLD_FILES+=usr/sbin/zdb
+OLD_FILES+=usr/sbin/zhack
+OLD_FILES+=usr/share/man/man1/zstreamdump.1.gz
+OLD_FILES+=usr/share/man/man7/zpool-features.7.gz
+OLD_FILES+=usr/share/man/man8/gptzfsboot.8.gz
 OLD_FILES+=usr/share/man/man8/zdb.8.gz
 OLD_FILES+=usr/share/man/man8/zfs.8.gz
+OLD_FILES+=usr/share/man/man8/zfsboot.8.gz
+OLD_FILES+=usr/share/man/man8/zfsloader.8.gz
 OLD_FILES+=usr/share/man/man8/zpool.8.gz
 .endif
 
