@@ -4341,6 +4341,13 @@ OLD_FILES+=usr/share/man/man3/iconvctl.3.gz
 OLD_FILES+=usr/share/man/man3/iconvlist.3.gz	
 .endif
 
+#.if ${MK_INCLUDES} == no
+#. if exists (${DESTDIR}/usr/include)
+#INCLUDES_FILES!=find ${DESTDIR}/usr/include \! -type d | sed -e 's,^${DESTDIR}/,,'; echo
+#OLD_FILES+=${INCLUDES_FILES}
+#. endif
+#.endif
+
 .if ${MK_INET6} == no
 OLD_FILES+=sbin/ping6
 OLD_FILES+=sbin/rtsol
