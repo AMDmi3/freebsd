@@ -6573,6 +6573,10 @@ OLD_FILES+=usr/bin/xzgrep
 .endif
 
 .if ${MK_MAIL} == no
+OLD_FILES+=etc/aliases
+OLD_FILES+=etc/mail.rc
+OLD_FILES+=etc/mail/aliases
+OLD_FILES+=etc/mail/mailer.conf
 OLD_FILES+=etc/periodic/daily/130.clean-msgs
 OLD_FILES+=usr/bin/Mail
 OLD_FILES+=usr/bin/biff
@@ -6594,11 +6598,17 @@ OLD_FILES+=usr/share/misc/mail.tildehelp
 .endif
 
 .if ${MK_MAILWRAPPER} == no
-OLD_FILES+=etc/mail/mailer.conf
-.if ${MK_SENDMAIL} == no
-OLD_FILES+=usr/sbin/mailwrapper
-.endif
 OLD_FILES+=usr/share/man/man8/mailwrapper.8.gz
+.endif
+
+.if ${MK_MAILWRAPPER} == no && ${MK_SENDMAIL} == no
+OLD_FILES+=bin/rmail
+OLD_FILES+=usr/bin/mailq
+OLD_FILES+=usr/bin/newaliases
+OLD_FILES+=usr/sbin/hoststat
+OLD_FILES+=usr/sbin/mailwrapper
+OLD_FILES+=usr/sbin/purgestat
+OLD_FILES+=usr/sbin/sendmail
 .endif
 
 #.if ${MK_MAN} == no
@@ -9154,17 +9164,26 @@ OLD_FILES+=usr/share/man/man8/rtquery.8.gz
 .endif
 
 .if ${MK_SENDMAIL} == no
+OLD_FILES+=etc/mail/Makefile
+OLD_FILES+=etc/mail/README
+OLD_FILES+=etc/mail/access.sample
+OLD_FILES+=etc/mail/freebsd.cf
+OLD_FILES+=etc/mail/freebsd.mc
+OLD_FILES+=etc/mail/freebsd.submit.cf
+OLD_FILES+=etc/mail/freebsd.submit.mc
+OLD_FILES+=etc/mail/helpfile
+OLD_FILES+=etc/mail/mailertable.sample
+OLD_FILES+=etc/mail/sendmail.cf
+OLD_FILES+=etc/mail/submit.cf
+OLD_FILES+=etc/mail/virtusertable.sample
+OLD_FILES+=etc/mtree/BSD.sendmail.dist
 OLD_FILES+=etc/periodic/daily/150.clean-hoststat
 OLD_FILES+=etc/periodic/daily/440.status-mailq
 OLD_FILES+=etc/periodic/daily/460.status-mail-rejects
 OLD_FILES+=etc/periodic/daily/500.queuerun
-.if ${MK_MAILWRAPPER} == no
-OLD_FILES+=bin/rmail
-.endif
 OLD_FILES+=usr/bin/vacation
 OLD_FILES+=usr/include/libmilter/mfapi.h
 OLD_FILES+=usr/include/libmilter/mfdef.h
-OLD_DIRS+=usr/include/libmilter
 OLD_FILES+=usr/lib/libmilter.a
 OLD_FILES+=usr/lib/libmilter.so
 OLD_LIBS+=usr/lib/libmilter.so.5
@@ -9183,7 +9202,6 @@ OLD_FILES+=usr/sbin/mailstats
 OLD_FILES+=usr/sbin/makemap
 OLD_FILES+=usr/sbin/praliases
 OLD_FILES+=usr/share/doc/smm/08.sendmailop/paper.ascii.gz
-OLD_DIRS+=usr/share/doc/smm/08.sendmailop
 OLD_FILES+=usr/share/man/man1/mailq.1.gz
 OLD_FILES+=usr/share/man/man1/newaliases.1.gz
 OLD_FILES+=usr/share/man/man1/vacation.1.gz
@@ -9387,7 +9405,8 @@ OLD_FILES+=usr/share/sendmail/cf/siteconfig/uucp.ucbarpa.m4
 OLD_FILES+=usr/share/sendmail/cf/siteconfig/uucp.ucbvax.m4
 OLD_DIRS+=usr/share/sendmail/cf/siteconfig
 OLD_DIRS+=usr/share/sendmail/cf
-OLD_DIRS+=usr/share/sendmail
+OLD_FILES+=var/log/sendmail.st
+OLD_DIRS+=var/spool/clientmqueue
 .endif
 
 .if ${MK_SHAREDOCS} == no
