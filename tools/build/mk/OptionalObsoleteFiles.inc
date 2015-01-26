@@ -9370,6 +9370,14 @@ OLD_FILES+=usr/tests/lib/libc/tls/libh_tls_dynamic_p.a
 OLD_FILES+=usr/tests/libexec/rtld-elf/libpythagoras_p.a
 .endif
 
+.if ${MK_PTHREAD} == no
+OLD_FILES+=usr/sbin/nscd
+OLD_FILES+=usr/sbin/pppctl
+OLD_FILES+=usr/share/man/man5/nscd.conf.5.gz
+OLD_FILES+=usr/share/man/man8/nscd.8.gz
+OLD_FILES+=usr/share/man/man8/pppctl.8.gz
+.endif
+
 .if ${MK_QUOTAS} == no
 OLD_FILES+=sbin/quotacheck
 OLD_FILES+=usr/bin/quota
