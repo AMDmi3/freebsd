@@ -5344,6 +5344,14 @@ OLD_LIBS+=usr/lib32/libcxxrt.so.1
 OLD_FILES+=usr/lib32/libcxxrt_p.a
 .endif
 
+.if ${MK_LIBPTHREAD} == no
+OLD_FILES+=usr/sbin/nscd
+OLD_FILES+=usr/sbin/pppctl
+OLD_FILES+=usr/share/man/man5/nscd.conf.5.gz
+OLD_FILES+=usr/share/man/man8/nscd.8.gz
+OLD_FILES+=usr/share/man/man8/pppctl.8.gz
+.endif
+
 .if ${MK_LIBTHR} == no
 OLD_LIBS+=lib/libthr.so.3
 OLD_LIBS+=lib/libzpool.so.2
@@ -9344,14 +9352,6 @@ OLD_FILES+=usr/lib32/libzfs_p.a
 OLD_FILES+=usr/tests/lib/libc/tls/libh_tls_dlopen_p.a
 OLD_FILES+=usr/tests/lib/libc/tls/libh_tls_dynamic_p.a
 OLD_FILES+=usr/tests/libexec/rtld-elf/libpythagoras_p.a
-.endif
-
-.if ${MK_PTHREAD} == no
-OLD_FILES+=usr/sbin/nscd
-OLD_FILES+=usr/sbin/pppctl
-OLD_FILES+=usr/share/man/man5/nscd.conf.5.gz
-OLD_FILES+=usr/share/man/man8/nscd.8.gz
-OLD_FILES+=usr/share/man/man8/pppctl.8.gz
 .endif
 
 .if ${MK_QUOTAS} == no
