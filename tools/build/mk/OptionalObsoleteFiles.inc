@@ -6619,10 +6619,10 @@ OLD_FILES+=usr/sbin/purgestat
 OLD_FILES+=usr/sbin/sendmail
 .endif
 
-#.if ${MK_MAN} == no
-# This should add a dependency to a special target which removes all man pages.
-# Listing all of them here is overkill.
-#.endif
+.if ${MK_MAN} == no
+MAN_FILES!=find ${DESTDIR}/usr/share/man \! -type d | sed -e 's,^${DESTDIR}/,,'; echo
+OLD_FILES+=${MAN_FILES}
+.endif
 
 .if ${MK_MAN_UTILS} == no
 OLD_FILES+=etc/periodic/weekly/320.whatis
