@@ -1051,8 +1051,8 @@ OLD_FILES+=usr/share/man/man3/cuse_vmoffset.3.gz
 OLD_FILES+=usr/share/man/man3/cuse_wait_and_process.3.gz
 .endif
 
-# devd(8) not listed here on purpose
 .if ${MK_CXX} == no
+#OLD_FILES+=sbin/devd	# excluded on purpose to prevent foot shooting
 OLD_FILES+=usr/bin/CC
 OLD_FILES+=usr/bin/c++
 OLD_FILES+=usr/bin/c++filt
@@ -1063,6 +1063,10 @@ OLD_FILES+=usr/bin/gperf
 OLD_FILES+=usr/share/info/gperf.info.gz
 OLD_FILES+=usr/share/man/man1/gperf.1.gz
 .endif
+OLD_FILES+=usr/share/man/man5/devd.conf.5.gz
+OLD_FILES+=usr/share/man/man8/devd.8.gz
+OLD_FILES+=usr/tests/sbin/devd/Kyuafile
+OLD_FILES+=usr/tests/sbin/devd/client_test
 .endif
 
 .if ${MK_FORTH} == no
