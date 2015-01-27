@@ -974,6 +974,18 @@ OLD_FILES+=usr/share/man/man1/llvm-symbolizer.1.gz
 OLD_FILES+=usr/share/man/man1/opt.1.gz
 .endif
 
+.if (${MK_CLANG_IS_CC} != "no" && ${MK_CLANG} == "no") || \
+    (${MK_CLANG_IS_CC} == "no" && ${MK_GCC} == "no")
+OLD_FILES+=usr/bin/CC
+OLD_FILES+=usr/bin/c++
+OLD_FILES+=usr/bin/cc
+OLD_FILES+=usr/bin/cpp
+OLD_FILES+=usr/share/man/man1/CC.1.gz
+OLD_FILES+=usr/share/man/man1/c++.1.gz
+OLD_FILES+=usr/share/man/man1/cc.1.gz
+OLD_FILES+=usr/share/man/man1/cpp.1.gz
+.endif
+
 .if ${MK_CPP} == no
 #OLD_FILES+=usr/bin/cpp
 #OLD_FILES+=usr/share/man/man1/cpp.1.gz
