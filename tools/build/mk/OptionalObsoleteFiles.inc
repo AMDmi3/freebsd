@@ -7804,7 +7804,7 @@ OLD_FILES+=usr/tests/usr.bin/bmake/variables/t0/legacy_test
 .endif
 
 .if ${MK_MAN} == no
-MAN_FILES!=find ${DESTDIR}/usr/share/man \! -type d | sed -e 's,^${DESTDIR}/,,'; echo
+MAN_FILES!=find ${DESTDIR}/usr/share/man ${DESTDIR}/usr/share/openssl/man -type f | sed -e 's,^${DESTDIR}/,,'; echo
 OLD_FILES+=${MAN_FILES}
 .endif
 
