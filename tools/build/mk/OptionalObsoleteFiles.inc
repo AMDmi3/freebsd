@@ -975,8 +975,8 @@ OLD_FILES+=usr/share/man/man1/opt.1.gz
 .endif
 
 .if ${MK_CPP} == no
-OLD_FILES+=usr/bin/cpp
-OLD_FILES+=usr/share/man/man1/cpp.1.gz
+#OLD_FILES+=usr/bin/cpp
+#OLD_FILES+=usr/share/man/man1/cpp.1.gz
 .endif
 
 .if ${MK_CRYPT} == no
