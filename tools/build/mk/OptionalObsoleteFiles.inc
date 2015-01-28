@@ -289,6 +289,7 @@ OLD_FILES+=usr/sbin/l2ping
 OLD_FILES+=usr/sbin/rfcomm_pppd
 OLD_FILES+=usr/sbin/sdpcontrol
 OLD_FILES+=usr/sbin/sdpd
+OLD_FILES+=usr/share/examples/etc/defaults/bluetooth.device.conf
 OLD_FILES+=usr/share/man/man1/bthost.1.gz
 OLD_FILES+=usr/share/man/man1/btsockstat.1.gz
 OLD_FILES+=usr/share/man/man1/rfcomm_sppd.1.gz
