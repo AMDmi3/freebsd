@@ -810,6 +810,10 @@ OLD_LIBS+=lib/libdtrace.so.2
 OLD_FILES+=usr/sbin/dtrace
 OLD_FILES+=usr/sbin/dtruss
 OLD_FILES+=usr/sbin/lockstat
+OLD_FILES+=usr/share/dtrace/disklatency
+OLD_FILES+=usr/share/dtrace/disklatencycmd
+OLD_FILES+=usr/share/dtrace/hotopen
+OLD_FILES+=usr/share/dtrace/nfsclienttime
 OLD_FILES+=usr/share/dtrace/toolkit/execsnoop
 OLD_FILES+=usr/share/dtrace/toolkit/hotkernel
 OLD_FILES+=usr/share/dtrace/toolkit/hotuser
@@ -1028,6 +1032,8 @@ OLD_FILES+=usr/share/man/man5/ctm.5.gz
 
 .if ${MK_CUSE} == no
 OLD_FILES+=usr/include/cuse.h
+OLD_FILES+=usr/include/fs/cuse/cuse_defs.h
+OLD_FILES+=usr/include/fs/cuse/cuse_ioctl.h
 OLD_FILES+=usr/lib/libcuse.a
 OLD_FILES+=usr/lib/libcuse.so
 OLD_LIBS+=usr/lib/libcuse.so.1
@@ -4228,6 +4234,8 @@ OLD_FILES+=usr/share/man/man1/truss.1.gz
 .endif
 
 .if ${MK_KERBEROS} == no
+OLD_FILES+=etc/rc.d/ipropd_master
+OLD_FILES+=etc/rc.d/ipropd_slave
 OLD_FILES+=etc/rc.d/kadmind
 OLD_FILES+=etc/rc.d/kdc
 OLD_FILES+=etc/rc.d/kfd
