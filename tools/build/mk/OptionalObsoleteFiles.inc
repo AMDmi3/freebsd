@@ -12494,8 +12494,6 @@ OLD_FILES+=usr/share/vt/keymaps/us.unix.kbd
 
 .if ${MK_WIRELESS} == no
 OLD_FILES+=etc/regdomain.xml
-OLD_FILES+=etc/rc.d/hostapd
-OLD_FILES+=etc/rc.d/wpa_supplicant
 OLD_FILES+=usr/sbin/ancontrol
 OLD_FILES+=usr/sbin/hostapd
 OLD_FILES+=usr/sbin/hostapd_cli
