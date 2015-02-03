@@ -11568,7 +11568,6 @@ OLD_FILES+=usr/lib/libatf-c++.so
 OLD_FILES+=usr/lib/libatf-c.a
 OLD_FILES+=usr/libexec/atf-check
 OLD_FILES+=usr/libexec/atf-sh
-OLD_DIRS+=usr/share/atf
 OLD_FILES+=usr/share/atf/libatf-sh.subr
 OLD_FILES+=usr/share/doc/atf/AUTHORS
 OLD_FILES+=usr/share/doc/atf/COPYING
