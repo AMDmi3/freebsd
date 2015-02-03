@@ -7486,6 +7486,10 @@ OLD_FILES+=usr/share/misc/mail.help
 OLD_FILES+=usr/share/misc/mail.tildehelp
 .endif
 
+.if ${MK_MAILWRAPPER} == no
+OLD_FILES+=usr/share/man/man8/mailwrapper.8.gz
+.endif
+
 .if ${MK_MAILWRAPPER} == no && ${MK_SENDMAIL} == no
 OLD_FILES+=bin/rmail
 OLD_FILES+=usr/bin/mailq
