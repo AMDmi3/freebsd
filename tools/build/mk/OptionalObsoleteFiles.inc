@@ -1093,19 +1093,6 @@ OLD_FILES+=usr/tests/sbin/devd/Kyuafile
 OLD_FILES+=usr/tests/sbin/devd/client_test
 .endif
 
-.if ${MK_FORTH} == no
-OLD_FILES+=usr/share/man/man5/loader.conf.5.gz
-OLD_FILES+=usr/share/man/man8/beastie.4th.8.gz
-OLD_FILES+=usr/share/man/man8/brand.4th.8.gz
-OLD_FILES+=usr/share/man/man8/check-password.4th.8.gz
-OLD_FILES+=usr/share/man/man8/color.4th.8.gz
-OLD_FILES+=usr/share/man/man8/delay.4th.8.gz
-OLD_FILES+=usr/share/man/man8/loader.4th.8.gz
-OLD_FILES+=usr/share/man/man8/menu.4th.8.gz
-OLD_FILES+=usr/share/man/man8/menusets.4th.8.gz
-OLD_FILES+=usr/share/man/man8/version.4th.8.gz
-.endif
-
 .if ${MK_FMTREE} == no
 OLD_FILES+=usr/sbin/fmtree
 OLD_FILES+=usr/share/man/man8/fmtree.8.gz
@@ -5262,28 +5249,6 @@ OLD_FILES+=usr/share/man/man1/host.1.gz
 .if ${MK_LEGACY_CONSOLE} == no
 OLD_FILES+=etc/rc.d/moused
 OLD_FILES+=etc/rc.d/syscons
-OLD_FILES+=usr/sbin/kbdcontrol
-OLD_FILES+=usr/sbin/kbdmap
-OLD_FILES+=usr/sbin/moused
-OLD_FILES+=usr/sbin/vidcontrol
-OLD_FILES+=usr/sbin/vidfont
-OLD_FILES+=usr/share/man/man1/kbdcontrol.1.gz
-OLD_FILES+=usr/share/man/man1/kbdmap.1.gz
-OLD_FILES+=usr/share/man/man1/vidcontrol.1.gz
-OLD_FILES+=usr/share/man/man1/vidfont.1.gz
-OLD_FILES+=usr/share/man/man5/kbdmap.5.gz
-OLD_FILES+=usr/share/man/man5/keymap.5.gz
-OLD_FILES+=usr/share/man/man8/moused.8.gz
-.endif
-
-.if ${MK_LDNS_UTILS} == no
-OLD_FILES+=usr/bin/drill
-OLD_FILES+=usr/share/man/man1/drill.1.gz
-OLD_FILES+=usr/bin/host
-OLD_FILES+=usr/share/man/man1/host.1.gz
-.endif
-
-.if ${MK_LEGACY_CONSOLE} == no
 OLD_FILES+=usr/sbin/kbdcontrol
 OLD_FILES+=usr/sbin/kbdmap
 OLD_FILES+=usr/sbin/moused
