@@ -957,9 +957,9 @@ OLD_DIRS+=usr/lib/clang
 OLD_FILES+=usr/share/doc/llvm/clang/LICENSE.TXT
 OLD_FILES+=usr/share/doc/llvm/COPYRIGHT.regex
 OLD_FILES+=usr/share/doc/llvm/LICENSE.TXT
+OLD_FILES+=usr/share/man/man1/clang.1.gz
 OLD_FILES+=usr/share/man/man1/clang++.1.gz
 OLD_FILES+=usr/share/man/man1/clang-cpp.1.gz
-OLD_FILES+=usr/share/man/man1/clang.1.gz
 OLD_FILES+=usr/share/man/man1/tblgen.1.gz
 .endif
 
