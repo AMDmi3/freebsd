@@ -44,7 +44,11 @@ NLSSRCFILES_${file}?= ${NLSSRCFILES}
 NLSSRCDIR_${file}?= ${NLSSRCDIR}
 ${file}.msg: ${NLSSRCFILES_${file}:S/^/${NLSSRCDIR_${file}}\//}
 	@rm -f ${.TARGET}
+.if defined(NLSICONV_${file})
+	iconv -f ${NLSICONV_${file}:E} -t ${file:E} ${.ALLSRC} > ${.TARGET}
+.else
 	cat ${.ALLSRC} > ${.TARGET}
+.endif
 CLEANFILES+= ${file}.msg
 .endif
 .endfor
