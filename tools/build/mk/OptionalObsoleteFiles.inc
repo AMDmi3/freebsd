@@ -9299,7 +9299,7 @@ OLD_DIRS+=var/spool/clientmqueue
 .endif
 
 .if ${MK_SHAREDOCS} == no
-SHAREDOCS_FILES!=find ${DESTDIR}/usr/share/docs \! -type d | sed -e 's,^${DESTDIR}/,,'; echo
+SHAREDOCS_FILES!=find ${DESTDIR}/usr/share/doc \! -type d | sed -e 's,^${DESTDIR}/,,'; echo
 OLD_FILES+=${SHAREDOCS_FILES}
 .endif
 
