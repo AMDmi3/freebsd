@@ -186,6 +186,12 @@ char *arcnames[] = {
 	NULL
 };
 
+int l2arc_stats[4];
+char *l2arcnames[] = {
+	"K Size, ", "K hits, ", "K misses, ",
+	NULL
+};
+
 int swap_stats[7];
 char *swapnames[] = {
 	"K Total, ", "K Used, ", "K Free, ", "% Inuse, ", "K In, ", "K Out",
@@ -221,6 +227,7 @@ static long total_majflt;
 /* these are for getting the memory statistics */
 
 static int arc_enabled;
+static int l2arc_enabled;
 static int pageshift;		/* log base 2 of the pagesize */
 
 /* define pagetok in terms of pageshift */
@@ -276,16 +283,18 @@ update_layout(void)
 
 	y_mem = 3;
 	y_arc = 4;
-	y_swap = 4 + arc_enabled;
-	y_idlecursor = 5 + arc_enabled;
-	y_message = 5 + arc_enabled;
-	y_header = 6 + arc_enabled;
-	y_procs = 7 + arc_enabled;
-	Header_lines = 7 + arc_enabled;
+	y_l2arc = 4 + arc_enabled;
+	y_swap = 4 + arc_enabled + l2arc_enabled;
+	y_idlecursor = 5 + arc_enabled + l2arc_enabled;
+	y_message = 5 + arc_enabled + l2arc_enabled;
+	y_header = 6 + arc_enabled + l2arc_enabled;
+	y_procs = 7 + arc_enabled + l2arc_enabled;
+	Header_lines = 7 + arc_enabled + l2arc_enabled;
 
 	if (pcpu_stats) {
 		y_mem += ncpus - 1;
 		y_arc += ncpus - 1;
+		y_l2arc += ncpus - 1;
 		y_swap += ncpus - 1;
 		y_idlecursor += ncpus - 1;
 		y_message += ncpus - 1;
@@ -314,7 +323,7 @@ machine_init(struct statics *statics, char do_unames)
 	size = sizeof(arc_size);
 	if (sysctlbyname("kstat.zfs.misc.arcstats.size", &arc_size, &size,
 	    NULL, 0) == 0 && arc_size != 0)
-		arc_enabled = 1;
+		l2arc_enabled = arc_enabled = 1; // XXX: fix l2arc
 
 	if (do_unames) {
 	    while ((pw = getpwent()) != NULL) {
@@ -361,6 +370,10 @@ machine_init(struct statics *statics, char do_unames)
 		statics->arc_names = arcnames;
 	else
 		statics->arc_names = NULL;
+	if (l2arc_enabled)
+		statics->l2arc_names = l2arcnames;
+	else
+		statics->l2arc_names = NULL;
 	statics->swap_names = swapnames;
 #ifdef ORDER
 	statics->order_names = ordernames;
@@ -546,7 +559,21 @@ get_system_info(struct system_info *si)
 		arc_stats[5] = arc_stat >> 10;
 		si->arc = arc_stats;
 	}
-		    
+
+	if (l2arc_enabled) {
+		GETSYSCTL("kstat.zfs.misc.arcstats.l2_size", arc_stat);
+		l2arc_stats[0] = arc_stat >> 10;
+		GETSYSCTL("kstat.zfs.misc.arcstats.l2_hits", arc_stat);
+		GETSYSCTL("kstat.zfs.misc.arcstats.l2_misses", arc_stat2);
+		int total = arc_stat + arc_stat2;
+		if (total) {
+			l2arc_stats[1] = 100 * arc_stat / total;
+			l2arc_stats[2] = 100 - l2arc_stats[1];
+		} else {
+			l2arc_stats[1] = l2arc_stats[2] = 0;
+		}
+		si->l2arc = l2arc_stats;
+	}
 	/* set arrays and strings */
 	if (pcpu_stats) {
 		si->cpustates = pcpu_cpu_states;

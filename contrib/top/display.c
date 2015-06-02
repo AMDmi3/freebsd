@@ -67,6 +67,7 @@ static char **procstate_names;
 static char **cpustate_names;
 static char **memory_names;
 static char **arc_names;
+static char **l2arc_names;
 static char **swap_names;
 
 static int num_procstates;
@@ -103,6 +104,8 @@ int  x_mem =		5;
 int  y_mem =		3;
 int  x_arc =		5;
 int  y_arc =		4;
+int  x_l2arc =		7;
+int  y_l2arc =		4;
 int  x_swap =		6;
 int  y_swap =		4;
 int  y_message =	5;
@@ -220,6 +223,7 @@ struct statics *statics;
 	lmemory = (int *)malloc(num_memory * sizeof(int));
 
 	arc_names = statics->arc_names;
+	l2arc_names = statics->l2arc_names;
 	
 	/* calculate starting columns where needed */
 	cpustate_total_length = 0;
@@ -668,6 +672,45 @@ int *stats;
     /* format the new line */
     summary_format(new, stats, arc_names);
     line_update(arc_buffer, new, x_arc, y_arc);
+}
+
+/*
+ *  *_l2arc(stats) - print "L2ARC: " followed by the L2ARC summary string
+ *
+ *  Assumptions:  cursor is on "lastline"
+ *                for i_l2arc ONLY: cursor is on the previous line
+ */
+char l2arc_buffer[MAX_COLS];
+
+i_l2arc(stats)
+
+int *stats;
+
+{
+    if (l2arc_names == NULL)
+	return (0);
+
+    fputs("\nL2ARC: ", stdout);
+    lastline++;
+
+    /* format and print the memory summary */
+    summary_format(l2arc_buffer, stats, l2arc_names);
+    fputs(l2arc_buffer, stdout);
+}
+
+u_l2arc(stats)
+
+int *stats;
+
+{
+    static char new[MAX_COLS];
+
+    if (l2arc_names == NULL)
+	return (0);
+
+    /* format the new line */
+    summary_format(new, stats, l2arc_names);
+    line_update(l2arc_buffer, new, x_l2arc, y_l2arc);
 }
 
  
