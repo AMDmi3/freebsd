@@ -46,6 +46,36 @@ extern uid_t real_uid, eff_uid;
 #endif
 
 int
+kiconv_check_xlat_table_already_loaded(const char *to, const char *from) {
+	size_t len, i;
+	struct iconv_cspair_info *csi;
+	struct iconv_cspair_info *curr;
+
+	if (sysctlbyname("kern.iconv.cslist", NULL, &len, NULL, 0) == -1) {
+		return 0;
+	}
+
+	if ((csi = (struct iconv_cspair_info*)malloc(len)) == NULL) {
+		return 0;
+	}
+
+	if (sysctlbyname("kern.iconv.cslist", csi, &len, NULL, 0) == -1) {
+		free(csi);
+		return 0;
+	}
+
+	for (i = 0, curr = csi; i < len/sizeof(struct iconv_cspair_info); i++, curr++) {
+		if (strcasecmp(curr->cs_from, from) == 0 && strcasecmp(curr->cs_to, to) == 0) {
+			free(csi);
+			return 1;
+		}
+	}
+
+	free(csi);
+	return 0;
+}
+
+int
 kiconv_add_xlat_table(const char *to, const char *from, const u_char *table)
 {
 	struct iconv_add_in din;
@@ -69,6 +99,9 @@ kiconv_add_xlat_table(const char *to, const char *from, const u_char *table)
 	}
         seteuid(real_uid); /* and back to real user */
 #else
+	if (kiconv_check_xlat_table_already_loaded(to, from))
+		return EEXIST;
+
 	if (sysctlbyname("kern.iconv.add", &dout, &olen, &din, sizeof(din)) == -1)
 		return errno;
 #endif
